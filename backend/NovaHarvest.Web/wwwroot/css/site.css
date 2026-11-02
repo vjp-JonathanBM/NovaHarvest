@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    background-color: white;
+    color: #26382b;
+}
+
+header {
+    background-color: #287a45;
+    color: white;
+    padding: 20px;
+}
+
+nav a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e5eee5;
+}
