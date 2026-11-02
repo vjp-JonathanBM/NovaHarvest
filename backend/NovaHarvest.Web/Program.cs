@@ -33,7 +33,7 @@ app.MapGet("/", () =>
             </main>
 
             <footer>
-                NovaHarvest - IES Valle del Jerte - {DateTime.Now.Year}
+                NovaHarvest · IES Valle del Jerte · {DateTime.Now.Year}
             </footer>
         </body>
         </html>
@@ -73,7 +73,7 @@ app.MapGet("/about", () =>
             </main>
 
             <footer>
-                NovaHarvest - IES Valle del Jerte - {DateTime.Now.Year}
+                NovaHarvest · IES Valle del Jerte · {DateTime.Now.Year}
             </footer>
         </body>
         </html>
@@ -114,7 +114,7 @@ app.MapGet("/status", () =>
             </main>
 
             <footer>
-                NovaHarvest - IES Valle del Jerte - {DateTime.Now.Year}
+                NovaHarvest · IES Valle del Jerte · {DateTime.Now.Year}
             </footer>
         </body>
         </html>
