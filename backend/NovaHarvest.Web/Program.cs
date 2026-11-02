@@ -16,7 +16,7 @@ app.MapGet("/", () =>
         </head>
         <body>
             <header>
-                <img src="/img/logo.png" alt="Logotipo de NovaHarvest" width="80">
+                <img src="/img/logo.jpg" alt="Logotipo de NovaHarvest" width="80">
                 <h2>NovaHarvest</h2>
                 <nav>
                     <a href="/">Inicio</a>
@@ -43,21 +43,86 @@ app.MapGet("/", () =>
 });
 
 
+
 app.MapGet("/about", () =>
 {
-    return Results.Content(
-        "<h1>Acerca de</h1><p>Proyecto del IES Valle del Jerte. Versión 0.1.0.</p>",
-        "text/html"
-    );
+    string html = $"""
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <title>NovaHarvest - Acerca de</title>
+            <link rel="stylesheet" href="/css/site.css">
+        </head>
+        <body>
+            <header>
+                <img src="/img/logo.jpg" alt="Logotipo de NovaHarvest" width="80">
+                <h2>NovaHarvest</h2>
+                <nav>
+                    <a href="/">Inicio</a>
+                    <a href="/about">Acerca de</a>
+                    <a href="/status">Estado</a>
+                </nav>
+            </header>
+
+            <main>
+                <h1>Acerca de</h1>
+                <p>Proyecto: NovaHarvest</p>
+                <p>Centro: IES Valle del Jerte</p>
+                <p>Autor: Jonathan Becerro Martin</p>
+            </main>
+
+            <footer>
+                NovaHarvest - IES Valle del Jerte - {DateTime.Now.Year}
+            </footer>
+        </body>
+        </html>
+        """;
+
+    return Results.Content(html, "text/html; charset=utf-8");
 });
+
+
 
 app.MapGet("/status", () =>
 {
     string currentDate = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
-    return Results.Content(
-        $"<h1>Estado del servidor</h1><p>{currentDate}</p><p>Pagina generada por ASP.NET Core (Kestrel)</p>",
-        "text/html"
-    );
+    string html = $"""
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <title>NovaHarvest - Estado del servidor</title>
+            <link rel="stylesheet" href="/css/site.css">
+        </head>
+        <body>
+            <header>
+                <img src="/img/logo.jpg" alt="Logotipo de NovaHarvest" width="80">
+                <h2>NovaHarvest</h2>
+                <nav>
+                    <a href="/">Inicio</a>
+                    <a href="/about">Acerca de</a>
+                    <a href="/status">Estado</a>
+                </nav>
+            </header>
+
+            <main>
+                <h1>Estado del servidor</h1>
+                <p>Fecha y hora: {currentDate}</p>
+                <p>Pagina generada por ASP.NET Core (Kestrel)</p>
+            </main>
+
+            <footer>
+                NovaHarvest - IES Valle del Jerte - {DateTime.Now.Year}
+            </footer>
+        </body>
+        </html>
+        """;
+
+    return Results.Content(html, "text/html; charset=utf-8");
 });
+
+
+
 app.Run();
